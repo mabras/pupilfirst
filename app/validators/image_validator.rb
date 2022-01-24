@@ -12,8 +12,7 @@ class ImageValidator < ActiveModel::EachValidator
 
     record.errors[attribute] <<
       (
-        options[:message] ||
-          'must be a JPEG, PNG, or GIF, less than 4096 pixels wide or high'
+        options[:message] || I18n.t("shared.image_validator")
       )
   end
 
