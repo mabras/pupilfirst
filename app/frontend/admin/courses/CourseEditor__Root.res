@@ -403,9 +403,9 @@ let showCourse = course => {
           )}
           <p className="text-sm px-4 py-2 text-gray-600"> {str(Course.description(course))} </p>
         </div>
-        <div className="grid grid-cols-3 divide-x py-4 divide-gray-300 ">
+        <div className="grid grid-cols-3 py-4">
           <Spread props={"data-t": `${Course.name(course)} cohorts count`}>
-            <div className="flex-1 px-4">
+            <div className="flex-1 px-4 border-e">
               <p className="text-sm text-gray-500 font-medium"> {ts("cohorts")->str} </p>
               <p className="mt-1 text-lg font-semibold">
                 {Course.cohortsCount(course)->string_of_int->str}
@@ -413,7 +413,7 @@ let showCourse = course => {
             </div>
           </Spread>
           <Spread props={"data-t": `${Course.name(course)} coaches count`}>
-            <div className="flex-1 px-4">
+            <div className="flex-1 px-4 border-e">
               <p className="text-sm text-gray-500 font-medium"> {ts("coaches")->str} </p>
               <p className="mt-1 text-lg font-semibold">
                 {Course.coachesCount(course)->string_of_int->str}
